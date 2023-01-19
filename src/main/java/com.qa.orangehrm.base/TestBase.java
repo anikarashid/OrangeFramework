@@ -23,8 +23,9 @@ public  FileInputStream fil;
         fil =new FileInputStream("C:\\Users\\M A Masud\\IdeaProjects\\OctobarSation22Framework\\src\\main\\java\\com\\qa\\orangehrm\\config\\config.properties");
      //   FileInputStream fil= new FileInputStream("Users\\M A Masud\\IdeaProjects\\OctoberStation22Framework\\src\\main\\java\\com\\qa\\orangehrm\\config\\config.properties");
         pro.load(fil);
-   // pro.getProperty("Url");
-  //  pro.getProperty("BrowserName");
+      pro.getProperty("BrowserName");
+        pro.getProperty("Url");
+
 
         String browser_Name = "chrome";
 
@@ -45,8 +46,8 @@ public  FileInputStream fil;
     }
     driver.manage().window().maximize();
     driver.manage().deleteAllCookies();
-    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-    driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(3));
+    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000l));
+    driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(3000l));
    // driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
     driver.get(pro.getProperty("Url"));
 
@@ -59,3 +60,5 @@ public  FileInputStream fil;
 
 
 }
+//when u declare the variable inside the class ,but outside the method this is global
+//when we declare the variable inside the method this is local
