@@ -17,7 +17,7 @@ public WebDriver driver;
 public Properties pro;
 public  FileInputStream fil;
 
-    public void driver_init() throws IOException {
+    public WebDriver driver_init() throws IOException {
       //  Properties pro = new Properties();
         pro =new Properties();
         fil =new FileInputStream("C:\\Users\\M A Masud\\IdeaProjects\\OctobarSation22Framework\\src\\main\\java\\com\\qa\\orangehrm\\config\\config.properties");
@@ -51,6 +51,7 @@ public  FileInputStream fil;
    // driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
     driver.get(pro.getProperty("Url"));
 
+        return driver;
     }
 
     public static void main(String[] args) throws IOException {
